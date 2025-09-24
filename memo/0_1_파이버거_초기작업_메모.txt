@@ -84,3 +84,9 @@ class Burger(models.Model):
  
  burgers = Burger.objects.filter(name__endswith="와퍼")
  burgers
+ 
+ 21 반복문으로 출력
+  len(burgers)
+  for burger in burgers:
+    print(burger.id, burger.name, burger.price, burger.calories, type(burger))
+  
