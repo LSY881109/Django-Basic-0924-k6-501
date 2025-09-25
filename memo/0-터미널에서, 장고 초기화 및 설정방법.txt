@@ -13,6 +13,7 @@ myvenv\Scripts\activate
 예)맥, source venv/bin/activate
 
 4 장고 설치 
+pip install django
 pip install 'django < 5' 
 
 5 설치 된 장고 버전 확인. 
