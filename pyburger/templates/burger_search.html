@@ -5,16 +5,22 @@
     <title>버거 검색 화면</title>
 </head>
 <body>
-    <h1>파이버거 검색 화면입니다.</h1>
-    <h2>검색결과</h2>
+<h1>파이버거 검색 화면입니다.</h1>
+<div>
+    <form method="GET">
+        <input type="text" name="keyword">
+        <button>검색</button>
+    </form>
+</div>
+<h2>검색결과</h2>
 {#    <div>{{ burgers }}</div>#}
- {% for item in burgers %}
-        <div>
-            id : {{ item.id }}
-            이름: {{ item.name }}
-            가격 : {{item.price  }}원
-            칼로리 : {{ item.calories }} kcal
-        </div>
-    {% endfor %}
+{% for item in burgers %}
+    <div>
+        id : {{ item.id }}
+        이름: {{ item.name }}
+        가격 : {{ item.price }}원
+        칼로리 : {{ item.calories }} kcal
+    </div>
+{% endfor %}
 </body>
 </html>

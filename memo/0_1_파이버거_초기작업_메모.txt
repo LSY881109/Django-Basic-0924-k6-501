@@ -223,3 +223,11 @@ pyburger/views.py 에 추가
         print("검색 결과: ", burgers)
     else:
         burgers = Burger.objects.none()
+		
+  34 검색 화면 추가 및 확인
+  <div>
+    <form method="GET">
+        <input type="text" name="keyword">
+        <button>검색</button>
+    </form>
+</div>
