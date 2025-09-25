@@ -58,6 +58,17 @@ class Burger(models.Model):
  13 관리자 페이지 접근. 
  http://127.0.0.1:8000/admin
  
+ 13-2, 관리자 설정 파일에, 
+ 엔티티 클래스 등록, 관리자 페이지에서, 해당 도메인 ,crud 가능
+ burgers/admin.py 
+ from burgers.models import Burger
+
+
+# Register your models here.
+@admin.register(Burger)
+class BurgerAdmin(admin.ModelAdmin):
+    pass
+ 
  14 로그인. 각자 만든 관리자 계정으로 로그인,
  버거의 샘플 디비 생성. 
  
