@@ -213,4 +213,13 @@ pyburger/views.py 에 추가
     <div>{{ burgers }}</div>
  
  
- 
+  33 keyword 유효성 체크, 널체크 
+  
+   keyword = request.GET.get("keyword")
+    # 유효성 체크
+    if keyword is not None:
+        burgers = Burger.objects.filter(name__icontains=keyword)
+        # 디비에서 조회
+        print("검색 결과: ", burgers)
+    else:
+        burgers = Burger.objects.none()
