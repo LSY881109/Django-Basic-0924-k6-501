@@ -28,9 +28,16 @@ class Burger(models.Model):
 
     def __str__(self):
         return self.name
+		
+ 8-0
+ config/settings.py , 앱 이름 등록하기. 
+ INSTALLED_APPS = [
+    'burgers',
+	...
 
  8 엔티티 클래스, 데이터베이스에 반영, 테이블 만들기. 
   python manage.py makemigrations burgers
+  
   
  9 
  파이참에, sqlite3, 파일기반의 데이터베이스 연결, 
