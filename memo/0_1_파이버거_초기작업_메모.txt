@@ -149,3 +149,37 @@ def burger_list(request):
     path('burgers/',burger_list)
 
 ]
+====위의 내용은 , pyburger2 작업함=================================================
+원래 pyburger에서 작업합니다.
+pyburger/views.py 에 추가 
+
+ 25 버거 검색, 뷰 작업 
+ 
+ def burger_search(request):
+   return render(request, "burger_search.html")
+   
+ 26 버거 검색 화면 html 작성. 
+ templates/burger_search.html 
+ 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>버거 검색 화면</title>
+</head>
+<body>
+    <h1>파이버거 검색 화면입니다.</h1>
+</body>
+</html>
+
+ 27 라우팅 등록하기. 
+ pyburger/urls.py 
+ 
+ urlpatterns = [
+    ...
+	 path('search/',burger_search)
+	 
+ 28 서버 실행 ,
+ python manage.py runserver  
+ 
+ http://127.0.0.1:8000/search/
