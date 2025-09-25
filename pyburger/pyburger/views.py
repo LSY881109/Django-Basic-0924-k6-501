@@ -16,4 +16,15 @@ def burger_list(request):
     return render(request, 'burger_list.html', context)
 
 def burger_search(request):
-    return render(request, "burger_search.html")
+    # 1. 화면에서 , 검색어 받아와서,
+    # 2. 디비에서 검색하고,
+    # 3. 검색 결과를 화면에 전달하고,
+    # search/?keyword=더블
+    keyword = request.GET.get("keyword")
+    print("keyword:", keyword)
+    # 디비에서 조회
+    burgers = Burger.objects.filter(name__contains=keyword)
+    print("검색 결과: ", burgers)
+    # 조회된 결과 데이터를 화면에 전달하기.
+    context = {'burgers': burgers}
+    return render(request, "burger_search.html",context)
