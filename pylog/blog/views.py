@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from blog.models import Post
 
@@ -26,6 +26,11 @@ def post_add(request):
         content = request.POST['content']
         print(title)
         print(content)
+        # 추가
+        post = Post.objects.create(
+            title=title,
+            content=content)
+        return redirect(f'/posts/{post.id}')
     else:
         print("method GET")
     return render(request, 'post_add.html')
