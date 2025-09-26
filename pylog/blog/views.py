@@ -19,6 +19,17 @@ def post_detail(request,post_id):
     }
     return render(request, 'post_detail.html',context)
 
+# 1) 글 작성 화면,GET 2) 글 로직 처리,POST
+def post_add(request):
+    if request.method == 'POST':
+        title = request.POST['title']
+        content = request.POST['content']
+        print(title)
+        print(content)
+    else:
+        print("method GET")
+    return render(request, 'post_add.html')
+
 
 
 

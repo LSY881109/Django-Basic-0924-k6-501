@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from blog.views import post_list, post_detail
+from blog.views import post_list, post_detail, post_add
 from pylog.views import index
 # 이미지 출력시 필요한 설정 추가
 from django.conf import settings
@@ -26,7 +26,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
     path('posts/', post_list),
-    path('posts/<int:post_id>/', post_detail)
+    path('posts/<int:post_id>/', post_detail),
+    path('posts/add/',post_add),
 ]
 # 이미지 출력시 필요한 설정 추가
 #
