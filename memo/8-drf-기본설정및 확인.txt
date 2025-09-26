@@ -17,6 +17,7 @@ source venv/bin/activate  # Windows: venv\Scripts\activate
 
 # 2. Django 및 DRF 설치
 pip install django djangorestframework
+pip install djangorestframework
 
 # 3. 프로젝트 및 앱 생성
 django-admin startproject myproject
@@ -61,7 +62,8 @@ class Post(models.Model):
 
 #### 3\. 시리얼라이저(Serializer) 생성
 
-모델 데이터를 JSON으로 변환해 줄 시리얼라이저를 만듭니다. `blog` 앱 폴더에 `serializers.py` 파일을 새로 생성하세요.
+모델 데이터를 JSON으로 변환해 줄 시리얼라이저를 만듭니다. 
+`blog` 앱 폴더에 `serializers.py` 파일을 새로 생성하세요.
 
 ```python
 # blog/serializers.py (새 파일)

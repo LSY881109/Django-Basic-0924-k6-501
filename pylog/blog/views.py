@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
-
 from blog.models import Post, Comment
+
+#레스트로 추가
+from blog.serializers import PostSerializer
+from rest_framework import viewsets
 
 
 # Create your views here.
@@ -50,6 +53,13 @@ def post_add(request):
         print("method GET")
     return render(request, 'post_add.html')
 
+
+class PostViewSet(viewsets.ModelViewSet):
+    """
+    Post 모델에 대한 CRUD API를 제공하는 ViewSet
+    """
+    queryset = Post.objects.all() # 모든 Post 객체를 가져와 최신순으로 정렬
+    serializer_class = PostSerializer
 
 
 

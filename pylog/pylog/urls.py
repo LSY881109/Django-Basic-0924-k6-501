@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from blog.views import post_list, post_detail, post_add
 from pylog.views import index
@@ -28,6 +28,7 @@ urlpatterns = [
     path('posts/', post_list),
     path('posts/<int:post_id>/', post_detail),
     path('posts/add/',post_add),
+    path('api/', include('blog.urls')),  # '/api/' 경로로 시작하는 모든 요청을 blog.urls로 전달
 ]
 # 이미지 출력시 필요한 설정 추가
 #
