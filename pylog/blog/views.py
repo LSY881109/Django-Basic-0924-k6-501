@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from blog.models import Post
+from blog.models import Post, Comment
 
 
 # Create your views here.
@@ -13,6 +13,14 @@ def post_detail(request,post_id):
     print("화면에서 전달 받은 상세 페이지 게시글 번호 post_id :", post_id)
     post = Post.objects.get(id=post_id)
     print(post)
+    # 추가, 상세보기 화면에서, post로 들어 올경우, 댓글 콘솔에 확인 해보기.
+    if request.method == 'POST':
+        comment_content = request.POST["comment"]
+        print(comment_content)
+        Comment.objects.create(
+            post=post,
+            content=comment_content
+        )
     context = {
         # "post_id": post_id,
         "post": post
