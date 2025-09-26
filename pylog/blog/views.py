@@ -30,14 +30,21 @@ def post_detail(request,post_id):
 # 1) 글 작성 화면,GET 2) 글 로직 처리,POST
 def post_add(request):
     if request.method == 'POST':
+        # 추가
+        print(request.FILES)
         title = request.POST['title']
         content = request.POST['content']
         print(title)
         print(content)
         # 추가
+        thumbnail = request.FILES['thumbnail']
+        # 추가
         post = Post.objects.create(
             title=title,
-            content=content)
+            content=content,
+            # 추가
+            thumbnail=thumbnail
+        )
         return redirect(f'/posts/{post.id}')
     else:
         print("method GET")
