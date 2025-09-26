@@ -63,6 +63,17 @@ http://127.0.0.1:8000/admin/
 - MEDIA_URL 과 업로드 파일 연결 
 - config/urls.py 
 
+설명, 
+1
+MEDIA_URL = '/media/' 
+2
+예시) 
+ http://127.0.0.1:8000/media/post/sample.png
+3
+settings.py에 MEDIA_ROOT = BASE_DIR / 'media' 로 설정
+4
+/media/post/sample.png
+
 추가 
 from django.conf import settings
 from django.conf.urls.static import static
